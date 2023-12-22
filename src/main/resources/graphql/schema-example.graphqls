@@ -1,0 +1,28 @@
+scalar LocalDate
+
+# 1st doc comment for querying data
+# Root
+type Query {
+    allVehicles: [Vehicle]
+    vehicleById(id: ID!): Vehicle
+}
+
+# 2nd doc comment to to update a vehicle by id
+# Root
+type Mutation {
+    addVehicle(id: ID!, vin: String): Vehicle
+}
+
+# Type definition
+type Vehicle {
+    id: ID!
+    vin: String
+    licensePlate: String
+    driver: Driver
+}
+
+# Type definition
+type Driver {
+    name: String
+    birthdate: LocalDate
+}
